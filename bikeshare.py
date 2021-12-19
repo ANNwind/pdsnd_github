@@ -201,8 +201,8 @@ def user_stats(df):
     # Display counts of user types
     # First, fill empty values with the most common user type
     df['User Type'] = df['User Type'].fillna(df['User Type'].mode()[0])
-    user_type_counts = df['User Type'].value_counts()
-    print("The distribution of user types is: \n{}\n".format(user_type_counts))
+    user_counts = df['User Type'].value_counts()
+    print("The distribution of user types is: \n{}\n".format(user_counts))
 
     # Display counts of gender
     if 'Gender' in df.columns:
