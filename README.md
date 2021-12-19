@@ -11,5 +11,5 @@ This project is for practicing git and github. Code is from a python project whi
 This project uses a python file named: bikeshare.py and some csv files, which are not included. 
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+No credit to give yet.
 
