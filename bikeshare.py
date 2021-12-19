@@ -20,9 +20,9 @@ def get_filters():
             print("\nYou've input '{}'. Please select one of the following cities? : "
                   "Chicago, New York City or Washington.\n Check your spelling and try again :-)\n".format(city))
         elif city == 'washington':
-            wash_dc = input("\nThere is no gender and birth year data available for Washington, "
+            washington_dc = input("\nThere is no gender and birth year data available for Washington, "
                            "would you like to continue? Enter yes or no.\n")
-            if wash_dc.lower() != 'no':
+            if washington_dc.lower() != 'no':
                 break
             continue
         else:
@@ -78,7 +78,7 @@ def load_data(city, month, day):
     return df
 
 
-def raw_data_chunker(iterable, size):
+def data_chunker(iterable, size):
     """
     Args:
         iterable: any iterable object
@@ -119,7 +119,7 @@ def time_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['Start Time', 'End Time', 'hour']], 5)
+            data_chunker(df[['Start Time', 'End Time', 'hour']], 5)
         else:
             break
 
@@ -153,7 +153,7 @@ def station_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['Start Station', 'End Station']], 5)
+            data_chunker(df[['Start Station', 'End Station']], 5)
         else:
             break
 
@@ -183,7 +183,7 @@ def trip_duration_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['Trip Duration']], 5)
+            data_chunker(df[['Trip Duration']], 5)
         else:
             break
 
@@ -201,8 +201,8 @@ def user_stats(df):
     # Display counts of user types
     # First, fill empty values with the most common user type
     df['User Type'] = df['User Type'].fillna(df['User Type'].mode()[0])
-    user_type_counts = df['User Type'].value_counts()
-    print("The distribution of user types is: \n{}\n".format(user_type_counts))
+    user_counts = df['User Type'].value_counts()
+    print("The distribution of user types is: \n{}\n".format(user_counts))
 
     # Display counts of gender
     if 'Gender' in df.columns:
@@ -232,7 +232,7 @@ def user_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['User Type', 'Birth Year']], 5)
+            data_chunker(df[['User Type', 'Birth Year']], 5)
         else:
             break
 
