@@ -78,7 +78,7 @@ def load_data(city, month, day):
     return df
 
 
-def raw_data_chunker(iterable, size):
+def data_chunker(iterable, size):
     """
     Args:
         iterable: any iterable object
@@ -119,7 +119,7 @@ def time_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['Start Time', 'End Time', 'hour']], 5)
+            data_chunker(df[['Start Time', 'End Time', 'hour']], 5)
         else:
             break
 
@@ -153,7 +153,7 @@ def station_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['Start Station', 'End Station']], 5)
+            data_chunker(df[['Start Station', 'End Station']], 5)
         else:
             break
 
@@ -183,7 +183,7 @@ def trip_duration_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['Trip Duration']], 5)
+            data_chunker(df[['Trip Duration']], 5)
         else:
             break
 
@@ -232,7 +232,7 @@ def user_stats(df):
             break
         if more_data.lower() != 'no':
             has_passed = True
-            raw_data_chunker(df[['User Type', 'Birth Year']], 5)
+            data_chunker(df[['User Type', 'Birth Year']], 5)
         else:
             break
 
