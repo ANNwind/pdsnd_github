@@ -20,9 +20,9 @@ def get_filters():
             print("\nYou've input '{}'. Please select one of the following cities? : "
                   "Chicago, New York City or Washington.\n Check your spelling and try again :-)\n".format(city))
         elif city == 'washington':
-            wash_dc = input("\nThere is no gender and birth year data available for Washington, "
+            washington_dc = input("\nThere is no gender and birth year data available for Washington, "
                            "would you like to continue? Enter yes or no.\n")
-            if wash_dc.lower() != 'no':
+            if washington_dc.lower() != 'no':
                 break
             continue
         else:
