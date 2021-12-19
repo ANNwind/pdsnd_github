@@ -5,7 +5,7 @@ Date created: 19/12/2021
 pdsnd_github
 
 ### Description
-Describe what your project is about and what it does
+This project is for practicing git and github.
 
 ### Files used
 Include the files used
